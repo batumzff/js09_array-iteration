@@ -103,12 +103,10 @@ const salaries = [10000, 15000, 9000, 20000]
 const sumOfSalaries = salaries.reduce((sum, sal) => sum + sal, 0)
 console.log("TOTAL:", sumOfSalaries)
 
-let result
 const sumOfSalaries1 = salaries.reduce((sum, sal, i) => {
-  result = `${i} ${sum + sal}`
-  console.log(result)
+  console.log(`${i} - ${sum + sal}`)
   return sum + sal
-})
+}, 0)
 console.log("TOTAL:", sumOfSalaries1)
 
 const numbers = [3, 2, 5, 4]
@@ -123,7 +121,6 @@ const zamliMaasToplami = salaries
 
 console.log("Zamlı Maas Toplami:", zamliMaasToplami)
 
-
 //* =======================================
 //*               OTHERS
 //* =======================================
@@ -134,9 +131,10 @@ console.log("Zamlı Maas Toplami:", zamliMaasToplami)
 //? test gerceklestirir.Tum elemanlar icin test basarili ise
 //? true aksi takdirde false deger dondurur.
 
-const ages = [18, 22, 78, 34, 78, 79, 15]
+const ages = [18, 22, 78, 44, 78, 89, 25]
 const check = ages.every((age) => age >= 18)
-check ? console.log("All ages are over 18") : console.log("Sum are under 18")
+
+check ? console.log("All ages are over 18") : console.log("Some are under 18")
 
 //* some()
 //*-----------------------------------------------------------
@@ -145,7 +143,7 @@ check ? console.log("All ages are over 18") : console.log("Sum are under 18")
 //? takdirde false deger dondurur.
 
 const over80 = ages.some((a) => a >= 80)
-console.log(over80) //? false
+console.log(over80) //? true
 
 //* find(), findLast()
 //*-----------------------------------------------------------
@@ -167,6 +165,5 @@ console.log(ages.find((age) => age >= 80)) //? undefined
 //? Eger hic bir eleman kosulu saglamazsa -1 dondurur.
 
 //?Ornek: Yasi 30 dan buyuk olan ilk elemanin indexini yazdirin
-
 const foundIndex = ages.findIndex((age) => age > 18)
 console.log(foundIndex) //? 1
